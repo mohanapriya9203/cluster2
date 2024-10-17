@@ -10,7 +10,7 @@ pipeline {
             steps {
                 script {
                     dir('terrcluster') {
-                        sh "terraform init"
+                        sh "terraform init -migrate-state"
                         sh "terraform validate"
                         sh "terraform apply -auto-approve"
                     }
